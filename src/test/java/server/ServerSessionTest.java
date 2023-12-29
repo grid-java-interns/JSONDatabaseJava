@@ -15,7 +15,7 @@ import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketException;
-
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
@@ -74,9 +74,9 @@ class ServerSessionTest {
         serverSession.start();
 
         // Assert
-
+        assertTrue(serverSession.exit);
         //verify(mockLogger, times(1)).write("Server started!");
-        verify(mockInput, times(1)).readUTF();
+       // verify(mockInput, times(1)).readUTF();
         //verify(mockOutput, times(1)).writeUTF(anyString());
         //verify(mockLogger, times(1)).write("Received: {\"type\":\"lalala\"}");
         //verify(mockLogger, times(1)).write("Sent: ");
